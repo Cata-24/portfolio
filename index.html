@@ -3,6 +3,7 @@
     <head>
         <title>My portfolio</title>
         <link href="index.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
         <header>
@@ -11,12 +12,12 @@
             </div>
             <h1>Portfolio</h1>
             <div id="links-div">
-                <p class="link">
+                <button class="link" id="linkabout">
                     <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span> <span>m</span><span>e</span>
-                </p>
-                <p class="link">
+                </button>
+                <button class="link" id="linkproj">
                     <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span>
-                </p>
+                </button>
                 
             </div>
         </header>
@@ -123,31 +124,57 @@
             </div>
             </div>
             </div>
+            <h1 id="proj-title">Projects</h1>
             <div id="projs">
-                <h1 id="proj-title">Projects</h1>
-                <div class="box">proj 1
-                    <img src="aaa">
+                <div class="box">
+                    <section class="slider" data-slider-id="1">
+                        <div class="slide fade">
+                            <div class="bi">
+                                <img src="imgs/level3.png" alt="proj 1">
+                                <h5>Level 1</h5>
+                            </div>
+                        </div>
+                        <div class="slide fade">
+                            <div class="bi">
+                                <img src="imgs/lc.png" alt="proj 1">
+                                <h5>Level 1</h5>
+                            </div>
+                        </div>
+                        <div class="slide fade">
+                            <div class="bi">
+                                <img src="imgs/level3.png" alt="proj 1">
+                                <h5>Level 1</h5>
+                            </div>
+                        </div>
+                    </section>
+                    <i class="fa-solid fa-arrow-left button prev" onclick="plusSlides(-1, 1)"></i>
+                    <i class="fa-solid fa-arrow-right button next" onclick="plusSlides(1, 1)"></i>
+                    <h2>Java Game</h2>
+                    <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
                 </div>
-                <div class="box">proj 2
-                    <img src="aaa">
+                <div class="box">
+                    <div class="bi">
+                        <img src="imgs/lc.png" alt="proj 2">
+                        <h5>Level 1</h5>
+                    </div>
+                    <h2>Java Game</h2>
+                    <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
                 </div>
-                <div class="box">proj 3
-                    <img src="aaa">
+                <div class="box">
+                    <div class="bi">
+                        <img src="imgs/level3.png" alt="proj 1">
+                        <h5>Level 1</h5>
+                    </div>
+                    <h2>Java Game</h2>
+                    <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
                 </div>
-                <div class="box">proj 4
-                    <img src="aaa">
-                </div>
-                <div class="box">proj 5
-                    <img src="aaa">
-                </div>
-                <div class="box">proj 6
-                    <img src="aaa">
-                </div>
-                <div class="box">proj 7
-                    <img src="aaa">
-                </div>
-                <div class="box">proj 8
-                    <img src="aaa">
+                <div class="box">
+                    <div class="bi">
+                        <img src="imgs/lc.png" alt="proj 2">
+                        <h5>Level 1</h5>
+                    </div>
+                    <h2>Java Game</h2>
+                    <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
                 </div>
             </div>
         </main>

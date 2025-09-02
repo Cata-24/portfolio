@@ -10,7 +10,12 @@
 
 @font-face {
     font-family: about-me;
-    src: url(fonts/dreamorphans-b.ttf)
+    src: url(fonts/dreamorphans.ttf)
+}
+
+@font-face {
+    font-family: projects;
+    src: url(fonts/BebasNeue-Regular.ttf)
 }
 
 @keyframes letter-move-down{
@@ -30,6 +35,29 @@
     to {
         transform: translateX(calc(-100%) );
     }
+}
+
+@keyframes autoShow {
+    from{
+        opacity: 0;
+        transform: translateY(150px) scale(0.3);
+    } to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes autoShowImg {
+    from{
+        transform: translateY(10%);
+    } to{
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
 }
 
 header {
@@ -61,13 +89,15 @@ body {
     flex: 1;
     text-align: right;
     justify-content: flex-end;
-    font-family: header;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .link {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-family: header;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .link span {
@@ -88,6 +118,11 @@ body {
 .link span:nth-child(6) { animation-delay: 0.7s; }
 .link span:nth-child(7) { animation-delay: 0.8s; }
 .link span:nth-child(8) { animation-delay: 0.9s; }
+
+.link:active {
+    text-shadow: 0.03em 0 rgba(55, 55, 55, 0.671), -0.03em 0 rgb(55, 55, 55, 0.671), 0 0.03em rgb(55, 55, 55, 0.671), 0 -0.03em rgb(55, 55, 55, 0.671);
+    transform: scale(1.08);
+}
 
 h1 {
     flex: 1;
@@ -160,15 +195,15 @@ li a{
 }
 
 .am {
-    font-family: about-me;
-    font-size: 150px;
+    font-family: projects;
+    font-size: 200px;
     line-height: 0.8;
-    width: 27%;
+    width: 30%;
     top: 0%;
     font-weight:lighter;
     position: absolute;
     z-index: 100;
-    background-color: white;
+    background-color: transparent;
     padding: 0px 0px; 
     text-align: center
 }
@@ -184,26 +219,111 @@ li a{
 }
 
 #proj-title {
-    font-size: 50px;
+  font-size: 80px;
+  font-family: projects;
+  margin-bottom: 70px;
+
+  animation: autoShow both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%; /* animate in until 20% */
+  position: sticky;
+  top: 20vh;
+}
+
+#projs {
+    display: flex;
+  flex-wrap: wrap;           /* allow wrapping */
+  justify-content:space-between;
+  gap: 5%;  
 }
 
 #projs .box {
-    width: 100%;
-    height: 45vh;
-    margin-bottom: 5vh;
-    padding: 0 5vw 0 5vw;
+  flex: 0 1 45%; 
+  height: 81vh;
+  padding: 0 2vw;
+  margin-bottom: 5vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.box:nth-child(even) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  flex-direction: column;
+}
+
+.bi img {
+  width: 35vw;
+  height: 120%; /* taller than box */
+  object-fit: cover;
+  transform: translateY(20%); /* start position */
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+
+.box img:hover {
+    opacity: 0.4;
+    cursor:pointer;
+}
+
+.bi {
+    height: 40vh;
+    width: 35vw;
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
 
-.box:nth-child(odd) {
-    display: flex;
-    justify-content: flex-end;
+.description {
+    width: 35vw;
+    text-align: justify;
+    font-size: 18px;
 }
 
-.box img {
-    width: 25vw;
-    height: 100%;
-    border: 1px solid black;
+h5 {
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), -1px -1px 2px rgb(0, 0, 0);
+    padding: 3%;
+    font-size: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 45%;
+    left: 13.5vw;
+    transform: translate(0, -45%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
+.bi:hover h5 {
+    opacity: 1; 
+}
 
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    animation: fade 0.5s ease-in-out;
+}
+
+.button {
+    font-size: 10px;
+    cursor: pointer;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0.5vh 0.3vw 0.5vh 0.3vw;
+}
+
+.prev { margin-left: 14vw; }
