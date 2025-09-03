@@ -1,25 +1,51 @@
 const am = document.querySelector('.am');
 const h = document.querySelector('.h');
-const maxX = window.innerWidth - am.offsetWidth;
-const horizontalScrollHeight = maxX; 
 
-document.body.style.height = window.innerHeight + horizontalScrollHeight + "px";
+let maxX, horizontalScrollHeight;
+let amBaseTop, amTargetTop;
+let hBaseTop, hTargetTop;
 
-const amBaseTop = am.getBoundingClientRect().top + window.scrollY;
-const amTargetTop = window.innerHeight * 0.30;
-const hBaseTop = h.getBoundingClientRect().top + window.scrollY;
-const hTargetTop = window.innerHeight * 0.37;
+function updateMeasurements() {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    maxX = viewportWidth - am.offsetWidth;
+    horizontalScrollHeight = maxX;
 
-window.addEventListener('scroll', () => {
+    document.body.style.height = (viewportHeight + horizontalScrollHeight) + "px";
+
+    const amRect = am.getBoundingClientRect();
+    amBaseTop = amRect.top + window.scrollY;
+    amTargetTop = viewportHeight * 0.26;
+
+    const hRect = h.getBoundingClientRect();
+    hBaseTop = hRect.top + window.scrollY;
+    hTargetTop = viewportHeight * 0.30;
+}
+
+function onScroll() {
     const scrollY = window.scrollY;
     const horizontalPercent = Math.min(scrollY / horizontalScrollHeight, 1);
+
     const amX = horizontalPercent * maxX;
     const amYOffset = Math.min(scrollY, horizontalScrollHeight) + amTargetTop - amBaseTop;
     const hYOffset = Math.min(scrollY, horizontalScrollHeight) + hTargetTop - hBaseTop;
 
     am.style.transform = `translate(${amX}px, ${amYOffset}px)`;
     h.style.transform = `translateY(${hYOffset}px)`;
+}
+
+window.addEventListener('load', () => {
+    updateMeasurements();
+    onScroll(); 
 });
+
+window.addEventListener('resize', () => {
+    updateMeasurements();
+    onScroll(); 
+});
+
+window.addEventListener('scroll', onScroll);
+
 
 document.querySelectorAll(".bi").forEach(box => {
   const img = box.querySelector("img");
@@ -38,18 +64,27 @@ function update() {
 });
 
 document.querySelector("#linkabout").addEventListener("click", () => {
+  let baseWidth = 1440;
+  let targetPx = 500;
+  let scaledScroll = targetPx * (window.innerWidth / baseWidth);
+
   window.scrollTo({
-    top: 500,
+    top: scaledScroll,
     behavior: "smooth"
   });
 });
 
 document.querySelector("#linkproj").addEventListener("click", () => {
+  let baseWidth = 1440;
+  let targetPx = 170;
+  let scaledScroll = targetPx * (window.innerWidth / baseWidth);
+
   window.scrollTo({
-    top: 1600,
+    top: scaledScroll,
     behavior: "smooth"
   });
 });
+
 
 const slideIndices = {};
 
@@ -77,6 +112,28 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlides(1, sliderId);
     });
 });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+document.querySelectorAll(".bi img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex"; 
+    lightboxImg.src = img.src;       
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+
 
 
 

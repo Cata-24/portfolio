@@ -40,7 +40,7 @@
 @keyframes autoShow {
     from{
         opacity: 0;
-        transform: translateY(150px) scale(0.3);
+        transform: translateY(70%) scale(0.3);
     } to{
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -96,7 +96,7 @@ body {
     background-color: transparent;
     border: none;
     font-family: header;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: bold;
 }
 
@@ -128,20 +128,20 @@ h1 {
     flex: 1;
     text-align: center;
     font-family: title;
-    font-size: 40px;
+    font-size: 3vw;
 }
 
 #languages-div {
     flex: 1;
     text-align: left;
     font-family: header;
-    font-size: 15px;
+    font-size: 1.2vw;
     font-weight: bold;
 }
 
 .language {
     font-family: header;
-    font-size: 15px;
+    font-size: 1.2vw;
     font-weight: bold;
     background-color: transparent;
     border: none;
@@ -163,7 +163,7 @@ h1 {
 }
 
 .horizontal ul {
-    font-size: 20px;
+    font-size: 1.5vw;
     border-block: 1px solid black;
     list-style: none;
     flex-shrink: 0;
@@ -171,7 +171,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.5vw;
     animation-name: scroll;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -196,10 +196,10 @@ li a{
 
 .am {
     font-family: projects;
-    font-size: 200px;
+    font-size: 14vw;
     line-height: 0.8;
     width: 30%;
-    top: 0%;
+    top: 0;
     font-weight:lighter;
     position: absolute;
     z-index: 100;
@@ -209,6 +209,7 @@ li a{
 }
 
 .h {
+    font-size: 5vw;  
     margin-top: 10%;
 }
 
@@ -219,22 +220,20 @@ li a{
 }
 
 #proj-title {
-  font-size: 80px;
-  font-family: projects;
-  margin-bottom: 70px;
-
-  animation: autoShow both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 20%; /* animate in until 20% */
-  position: sticky;
-  top: 20vh;
+    font-size: 5.5vw;
+    font-family: projects;
+    animation: autoShow both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%; 
+    position: sticky;
+    top: 20vh;
 }
 
 #projs {
     display: flex;
-  flex-wrap: wrap;           /* allow wrapping */
-  justify-content:space-between;
-  gap: 5%;  
+    flex-wrap: wrap; 
+    justify-content:space-between;
+    gap: 5%;  
 }
 
 #projs .box {
@@ -256,9 +255,9 @@ li a{
 
 .bi img {
   width: 35vw;
-  height: 120%; /* taller than box */
+  height: 120%;
   object-fit: cover;
-  transform: translateY(20%); /* start position */
+  transform: translateY(20%);
   will-change: transform;
   transition: opacity 0.3s ease;
 }
@@ -280,15 +279,14 @@ li a{
 .description {
     width: 35vw;
     text-align: justify;
-    font-size: 18px;
+    font-size: 1.3vw;
 }
 
 h5 {
     color: white;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0), -1px -1px 2px rgb(0, 0, 0);
+    text-shadow: 0.1vw 0.1vh 0.2vw rgb(0, 0, 0), -1px -1px 2px rgb(0, 0, 0);
     padding: 3%;
-    font-size: 20px;
-    border-radius: 10px;
+    font-size: 1.5vw;
     position: absolute;
     top: 45%;
     left: 13.5vw;
@@ -317,13 +315,51 @@ h5 {
 }
 
 .button {
-    font-size: 10px;
+    font-size: 0.8vw;
     cursor: pointer;
     color: white;
     background: black;
     border-radius: 50%;
-    padding: 10px;
+    padding: 0.8vw;
     margin: 0.5vh 0.3vw 0.5vh 0.3vw;
 }
 
 .prev { margin-left: 14vw; }
+
+.lightbox {
+  display: none;             
+  position: fixed;
+  z-index: 2000;             
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 1vh;
+  right: 2.5vw;
+  font-size: 3.5vw;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lightbox .close:hover {
+  color: red;
+}
+
+h2 {
+    font-size: 1.5vw;
+}
+
