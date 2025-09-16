@@ -76,7 +76,7 @@ document.querySelector("#linkabout").addEventListener("click", () => {
 
 document.querySelector("#linkproj").addEventListener("click", () => {
   let baseWidth = 1440;
-  let targetPx = 170;
+  let targetPx = 1500;
   let scaledScroll = targetPx * (window.innerWidth / baseWidth);
 
   window.scrollTo({
@@ -133,6 +133,19 @@ lightbox.addEventListener("click", (e) => {
     lightbox.style.display = "none";
   }
 });
+const projTitle = document.getElementById("proj-title");
+const triggerHeight = 1250; // change this to the scroll position you want
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= triggerHeight) {
+    projTitle.style.opacity = "1";
+    projTitle.style.pointerEvents = "auto";
+  } else {
+    projTitle.style.opacity = "0";
+    projTitle.style.pointerEvents = "none";
+  }
+});
+
 
 
 
