@@ -1,149 +1,103 @@
-const am = document.querySelector('.am');
-const h = document.querySelector('.h');
+document.addEventListener("scroll", () => {
+    const container = document.querySelector(".scroll-img-container");
+    const img = container.querySelector("img");
 
-let maxX, horizontalScrollHeight;
-let amBaseTop, amTargetTop;
-let hBaseTop, hTargetTop;
+    const rect = container.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-function updateMeasurements() {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    maxX = viewportWidth - am.offsetWidth;
-    horizontalScrollHeight = maxX;
-
-    document.body.style.height = (viewportHeight + horizontalScrollHeight) + "px";
-
-    const amRect = am.getBoundingClientRect();
-    amBaseTop = amRect.top + window.scrollY;
-    amTargetTop = viewportHeight * 0.26;
-
-    const hRect = h.getBoundingClientRect();
-    hBaseTop = hRect.top + window.scrollY;
-    hTargetTop = viewportHeight * 0.30;
-}
-
-function onScroll() {
-    const scrollY = window.scrollY;
-    const horizontalPercent = Math.min(scrollY / horizontalScrollHeight, 1);
-
-    const amX = horizontalPercent * maxX;
-    const amYOffset = Math.min(scrollY, horizontalScrollHeight) + amTargetTop - amBaseTop;
-    const hYOffset = Math.min(scrollY, horizontalScrollHeight) + hTargetTop - hBaseTop;
-
-    am.style.transform = `translate(${amX}px, ${amYOffset}px)`;
-    h.style.transform = `translateY(${hYOffset}px)`;
-}
-
-window.addEventListener('load', () => {
-    updateMeasurements();
-    onScroll(); 
+    if (rect.top < windowHeight && rect.bottom > 0) {
+        const percentage = (windowHeight - rect.top) / (windowHeight + rect.height);
+        img.style.transform = `translateY(${percentage * -120}px)`;
+    }
 });
 
-window.addEventListener('resize', () => {
-    updateMeasurements();
-    onScroll(); 
-});
+document.addEventListener("scroll", () => {
+    const section = document.querySelector(".horizontal-section");
+    const track = document.querySelector(".horizontal-track");
 
-window.addEventListener('scroll', onScroll);
+    const marginFix = parseFloat(getComputedStyle(section).marginTop);
+    const start = section.offsetTop - marginFix;
+    const end = start + section.offsetHeight - window.innerHeight;
 
+    const progress = Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1);
 
-document.querySelectorAll(".bi").forEach(box => {
-  const img = box.querySelector("img");
+    const maxTranslate = track.scrollWidth - window.innerWidth;
 
-function update() {
-    const rect = box.getBoundingClientRect();
-    const viewHeight = window.innerHeight;
-    const progress = Math.min(Math.max(1 - rect.bottom / (viewHeight + rect.height), 0), 1);
-    const translate = 20 - 40 * progress;
-    img.style.transform = `translateY(${translate}%)`;
-
-    requestAnimationFrame(update);
-  }
-
-  update();
+    track.style.transform = `translateX(-${progress * maxTranslate}px)`;
 });
 
 document.querySelector("#linkabout").addEventListener("click", () => {
-  let baseWidth = 1440;
-  let targetPx = 500;
-  let scaledScroll = targetPx * (window.innerWidth / baseWidth);
+  const targetElement = document.querySelector("#about"); 
 
   window.scrollTo({
-    top: scaledScroll,
+    top: targetElement.offsetTop, 
     behavior: "smooth"
   });
 });
 
 document.querySelector("#linkproj").addEventListener("click", () => {
-  let baseWidth = 1440;
-  let targetPx = 1500;
-  let scaledScroll = targetPx * (window.innerWidth / baseWidth);
+  const targetElement = document.querySelector("#projects"); 
 
   window.scrollTo({
-    top: scaledScroll,
+    top: targetElement.offsetTop, 
     behavior: "smooth"
   });
 });
 
+const sliders = document.querySelectorAll('.slider-container');
 
-const slideIndices = {};
+sliders.forEach(container => {
+    const slides = container.querySelector('.slides');
+    let images = slides.querySelectorAll('img');
 
-function plusSlides(n, sliderId) {
-    if (!(sliderId in slideIndices)) slideIndices[sliderId] = 1;
-    showSlides(slideIndices[sliderId] += n, sliderId);
-}
+    // Clone first & last images for smooth looping
+    const firstClone = images[0].cloneNode(true);
+    const lastClone = images[images.length - 1].cloneNode(true);
 
-function showSlides(n, sliderId) {
-    let slides = document.querySelectorAll(`.slider[data-slider-id="${sliderId}"] .slide`);
-    if (!slides || slides.length === 0) return;
+    slides.appendChild(firstClone);
+    slides.insertBefore(lastClone, images[0]);
 
-    if (n > slides.length) slideIndices[sliderId] = 1;
-    if (n < 1) slideIndices[sliderId] = slides.length;
+    images = slides.querySelectorAll('img');
 
-    slides.forEach(slide => slide.style.display = "none");
+    let index = 1;
+    const total = images.length;
 
-    slides[slideIndices[sliderId] - 1].style.display = "block";
-}
+    // Start in the "real" first image
+    slides.style.transform = `translateX(-${index * 100}%)`;
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".slider").forEach(slider => {
-        const sliderId = slider.dataset.sliderId;
-        slideIndices[sliderId] = 1;
-        showSlides(1, sliderId);
+    const prevBtn = container.parentElement.querySelector('.prev-btn');
+    const nextBtn = container.parentElement.querySelector('.next-btn');
+
+    function moveToIndex() {
+        slides.style.transition = "transform 0.4s ease-in-out";
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        if (index >= total - 1) return; 
+        index++;
+        moveToIndex();
     });
-});
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox .close");
+    prevBtn.addEventListener('click', () => {
+        if (index <= 0) return;
+        index--;
+        moveToIndex();
+    });
 
-document.querySelectorAll(".bi img").forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex"; 
-    lightboxImg.src = img.src;       
-  });
-});
-
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
-  }
-});
-const projTitle = document.getElementById("proj-title");
-const triggerHeight = 1250; // change this to the scroll position you want
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= triggerHeight) {
-    projTitle.style.opacity = "1";
-    projTitle.style.pointerEvents = "auto";
-  } else {
-    projTitle.style.opacity = "0";
-    projTitle.style.pointerEvents = "none";
-  }
+    // When sliding ends, jump instantly (no animation) to real first/last
+    slides.addEventListener('transitionend', () => {
+        if (images[index] === firstClone) {
+            slides.style.transition = "none";
+            index = 1;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        if (images[index] === lastClone) {
+            slides.style.transition = "none";
+            index = total - 2;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+    });
 });
 
 

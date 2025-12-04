@@ -1,233 +1,305 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My portfolio</title>
-        <link href="index.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    </head>
-    <body>
-        <header>
-            <div id="languages-div">
-                <button class="language">en</button> / <button class="language">pt</button>
-            </div>
-            <h1>Portfolio</h1>
-            <div id="links-div">
-                <button class="link" id="linkabout">
-                    <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span> <span>m</span><span>e</span>
-                </button>
-                <button class="link" id="linkproj">
-                    <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span>
-                </button>
-                
-            </div>
-        </header>
-        <main>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body>
 
-            <div class="container">
-            <p class="am">About me</p>
-            <div class="h">
-            <div class="horizontal">
-                <ul class="first" aria-hidden="true">
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                </ul>
-                <ul class="first" aria-hidden="true">
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                    <li>
-                        I'm a 3rd year Bachelor’s student in Informatics and Computing Engineering at FEUP
-                    </li>
-                </ul>
-            </div>
-            <div class="horizontal">
-                <ul class="second" aria-hidden="true">
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                </ul>
-                <ul class="second" aria-hidden="true">
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                    <li>
-                        I'm currently in Porto, Portugal
-                    </li>
-                </ul>
-            </div>
-            <div class="horizontal">
+<header>
+    <h1 class="header-title" style="color:#640909">Portfolio</h1>
+    <div id="links-div">
+        <button class="link" id="linkabout">
+            <span>S</span><span>o</span><span>b</span><span>r</span><span>e</span> <span>m</span><span>i</span><span>m</span>
+        </button>
+
+        <button class="link" id="linkproj">
+            <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>t</span><span>o</span><span>s</span>
+        </button>
+    </div>
+</header>
+
+<section id="home" class="section text-center d-flex align-items-center justify-content-center" style="height:100vh;">
+    <div>
+        <div class="display-4">Bem-vindo!</div>
+        <p class="lead">
+            <a href="mailto:catarina.lbastosss@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://github.com/Cata-24" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/catarina-bastos-464328396/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </p>
+
+        <div class="h">
+            <div class="horizontal" style="font-size: clamp(2vh, 5vw, 2vw);">
                 <ul class="third" aria-hidden="true">
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
+                    <li>• <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento web</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">C++</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">HTML</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Python</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">CSS</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">SQLite</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento de software</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">PHP</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Web design</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Excel</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Java Script</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Flutter</span></li>
+                    <li>• <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento web</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">C++</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">HTML</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Python</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">CSS</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">SQLite</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento de software</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">PHP</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Web design</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Excel</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Java Script</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Flutter</span></li>
                 </ul>
+
                 <ul class="third" aria-hidden="true">
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
-                    <li>
-                        Email: <a href="mailto:catarina.lbastosss@gmail.com">catarina.lbastosss@gmail.com</a>
-                    </li>
+                    <li>• <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento web</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">C++</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">HTML</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Python</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">CSS</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">SQLite</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento de software</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">PHP</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Web design</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Excel</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Java Script</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Flutter</span></li>
+                    <li>• <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento web</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">C++</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">HTML</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Python</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">CSS</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">SQLite</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Desenvolvimento de software</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">PHP</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Web design</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Excel</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Java Script</span> • <span style="color:#640909; font-size:clamp(2vh, 4vw, 2vw);">Flutter</span></li>
                 </ul>
             </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SOBRE MIM -->
+<div id="about">
+<div class="container py-5" style="padding-bottom: 25vh !important; padding-top: 25vh !important;">
+    <div class="row align-items-center">
+
+        <div class="col-md-5">
+            <div class="scroll-img-container">
+                <img src="imgs/IMG_2200.JPG" alt="Foto">
             </div>
-            </div>
-            <div id="projs">
-                <h1 id="proj-title">Projects</h1>
-                <div class="box">
-                    <div class="block1">
-                    <section class="slider" data-slider-id="1">
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/lc.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                    </section>
-                    <div>
-                        <i class="fa-solid fa-arrow-left button prev" onclick="plusSlides(-1, 1)"></i>
-                        <i class="fa-solid fa-arrow-right button next" onclick="plusSlides(1, 1)"></i>
-                    </div>
-                    </div>
-                    <div class="block">
-                        <h2>Java Game</h2>
-                        <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="block1">
-                    <section class="slider" data-slider-id="2">
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/lc.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                    </section>
-                    <div>
-                        <i class="fa-solid fa-arrow-left button prev" onclick="plusSlides(-1, 2)"></i>
-                        <i class="fa-solid fa-arrow-right button next" onclick="plusSlides(1, 2)"></i>
-                    </div>
-                    </div>
-                    <div class="block">
-                        <h2>Java Game</h2>
-                        <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="block1">
-                    <section class="slider" data-slider-id="3">
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/lc.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                        <div class="slide fade">
-                            <div class="bi">
-                                <img src="imgs/level3.png" alt="proj 1">
-                                <h5>Level 1</h5>
-                            </div>
-                        </div>
-                    </section>
-                    <div>
-                        <i class="fa-solid fa-arrow-left button prev" onclick="plusSlides(-1, 3)"></i>
-                        <i class="fa-solid fa-arrow-right button next" onclick="plusSlides(1, 3)"></i>
-                    </div>
-                    </div>
-                    <div class="block">
-                        <h2>Java Game</h2>
-                        <p class="description">This game is a platformer adventure where 2 players navigate through a room filled with enemies, obstacles, and collectibles. Players can move and interact with the environment to overcome challenges while also being able to catch more lives, all by working together. The game features a life system, smooth controls and some obstacles to ensure an engaging experience.</p>
+        </div>
+
+        <div class="col-md-7 mb-md-0 p-md-4">
+            <h6 class="mt-0">Sobre Mim</h6>
+            <p>
+                Chamo-me Catarina Bastos e estou no 3º ano de Engenharia Informática e Computação na Faculdade de Engenharia do Porto.
+                Possuo conhecimentos de desenvolvimento web, análise de dados, diversas linguagens de programação resolução de problemas.
+            </p>
+            <p>
+                Sou uma pessoa ambiciosa que está sempre à procura de novos desafios, e procuro uma oportunidade para aplicar e aprofundar os meus conhecimentos 
+                e colaborar com equipas dinâmicas para resolver problemas do mundo real.
+            </p>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<section id="projects" class="horizontal-section">
+  <div class="sticky-wrapper">
+    <h6 class="proj" style="color:#640909">Projetos</h6>
+    <div class="horizontal-track">
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>Website de Serviços de Freelancer</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/ltw/login.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ltw/main.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ltw/category.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ltw/service.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ltw/messages.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ltw/profile.gif" class="card-img-top" alt="...">
                     </div>
                 </div>
             </div>
-            <div id="lightbox" class="lightbox">
-                <span class="close">&times;</span>
-                <img id="lightbox-img" src="" alt="enlarged image">
+            <p class="card-text">Plataforma de serviços freelance que permite aos utilizadores oferecer e contratar serviços de forma simples e intuitiva. Inclui pesquisa e filtragem avançadas, descrições detalhadas de serviços, avaliações de utilizadores e sistemas de feedback. O website foi desenvolvido com uma base de dados SQLite para gerir utilizadores, serviços, transações, mensagens e categorias, enquanto o PHP é responsável pela geração dinâmica de conteúdo. O design responsivo é alcançado com HTML/CSS, e o JavaScript (com Ajax) melhora a interatividade através de funcionalidades como pesquisa em tempo real e atualizações assíncronas.</p>
+            <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <button class="prev-btn">❮</button>
+                <a href="https://github.com/Cata-24/ltw-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                <button class="next-btn">❯</button>
+                </div>
             </div>
-        </main>
-        <script src="index.js"></script>
-    </body>
+        </div>
+      <div class="card align-items-center" style="width: 25rem;">
+            <h2>Jogo de Labirinto para Minix3</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/lc/game_start.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/bomb.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/key.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/lives.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/open_door.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/pause.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/special_walls.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/sword.gif" class="card-img-top" alt="...">
+                        <img src="imgs/lc/win.gif" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">Este projeto, desenvolvido em Minix3, implementa os drivers de I/O de temporizador, teclado, rato e vídeo para criar um jogo de labirinto composto por 3 níveis. Neste jogo, o jogador navega por uma sala cheia de inimigos, obstáculos e colecionáveis como corações e estrelas. O jogador pode mover-se e interagir com o ambiente para superar desafios, como derrotar monstros, apanhar estrelas, obter a chave para abrir a porta para o nível seguinte e usar velocidade para atravessar paredes especiais. O jogo também inclui um sistema de vidas que permite ao jogador recuperar vidas caso perca alguma ao colidir com monstros ou bombas.</p>
+            <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <button class="prev-btn">❮</button>
+                <a href="https://github.com/Cata-24/lc-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                <button class="next-btn">❯</button>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>Jogo de Labirinto BoyGirl criado em Java</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/ldts/mainmenu.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/level1.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/level2.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/level3.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/level4.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/pausemenu.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/lost.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/win.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/arrowsmovement.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/checkpoint.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/doorswithtimer.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/enemiesmovement.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/fakefloor.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/hearts.gif" class="card-img-top" alt="...">
+                        <img src="imgs/ldts/openingdoors.gif" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">Este jogo, desenvolvido em Java, é uma aventura plataforma para 2 jogadores, onde cada um navega por uma sala cheia de inimigos, obstáculos e itens colecionáveis. Os jogadores podem mover-se e interagir com o ambiente para superar desafios, além de poderem recuperar mais vidas, tudo trabalhando em conjunto. O jogo inclui um sistema de vidas, controlos suaves e diversos obstáculos para proporcionar uma experiência envolvente.</p>
+            <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <button class="prev-btn">❮</button>
+                <a href="https://github.com/Cata-24/ldts-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                <button class="next-btn">❯</button>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>MyPantry</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/bbb34981-a085-4a06-a1fb-1ab88c077a02.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">MyPantry é uma aplicação desenvolvida em Flutter, utilizada para gerir os itens da sua despensa, reduzir desperdícios e também aproveitar os alimentos, pesquisando novas receitas ou até partilhando as suas próprias. Nunca mais terá de se perguntar se ainda tem isto ou aquilo em casa — a sua despensa estará sempre no seu bolso. No futuro, pretendemos aumentar a nossa base de utilizadores e tornar a aplicação um ponto de encontro para todos os foodies que queiram criar, partilhar e explorar! Para além disso, queremos tornar tudo mais simples para si na cozinha.</p>
+            <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <a href="https://github.com/Cata-24/es-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>Otimização de Paletes em Caminhões de Entrega</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/da2/da2.gif" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">Este projeto foi desenvolvido para resolver o Problema de Otimização de Paletização em Caminhões de Entrega, uma versão real do Problema da Mochila 0/1. Para isso, foram implementados diversos algoritmos (força bruta, programação dinâmica, aproximação e ILP) para maximizar o lucro respeitando restrições de peso e comparar diferentes eficiências e desempenhos. Além disso, foram criadas representações gráficas dos diferentes tempos e espaços obtidos.</p>
+            <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <a href="https://github.com/Cata-24/da-proj-2" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>Planeamento de Rotas para Uso Individual</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/da1/da1.gif" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">Este projeto consiste numa ferramenta de planeamento de rotas que gera uma estrutura de dados semelhante a um grafo a partir de ficheiros .csv contendo localizações e distâncias entre essas mesmas localizações. A partir dessa estrutura, a ferramenta recebe inputs relacionados com as preferências de planeamento de percurso e apresenta a rota ótima.</p>
+                <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <a href="https://github.com/Cata-24/da-proj-1" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem;">
+            <h2>Base de dados de aplicação de séries e filmes</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/Projeto.png" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">Este projeto consiste numa base de dados para gerir filmes, séries e atividades dos utilizadores numa plataforma de rastreamento audiovisual, permitindo criar listas personalizadas, seguir outros utilizadores e avaliar conteúdos. O sistema organiza filmes e séries, com temporadas e episódios, associando categorias, faixas etárias, participantes (atores e diretores) e plataformas de streaming. O objetivo é proporcionar uma experiência personalizada, eficiente e organizada na interação com o conteúdo audiovisual.</p>
+                <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <a href="https://github.com/Cata-24/bd-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="card align-items-center" style="width: 25rem; margin-right: 8vh;">
+            <h2>Processador de imagens</h2>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="imgs/batman.png" class="card-img-top" alt="...">
+                    </div>
+                </div>
+            </div>
+            <p class="card-text">A primeira etapa deste projeto consistiu no ficheiro SVGElements.hpp, onde foram declaradas classes capazes de ler elementos geométricos "rect", "circle", "ellipse", "line", "polyline" e "polygon". Todas as funções membro foram definidas em SVGElements.cpp. No ficheiro readSVG.cpp, criámos a função void dump, que analisa recursivamente os elementos XML de um arquivo SVG e os armazena no vetor svg_elements, recorrendo a funções auxiliares. Assim, partindo de um vetor vazio, conseguimos preencher todos os elementos a desenhar com as devidas transformações aplicadas.</p>
+                <div class="card-body text-center">
+                <h5 class="card-title">Card title</h5>
+                <div class="l">
+                <a href="https://github.com/Cata-24/prog-proj" 
+                    class="btn btn-light" 
+                    target="_blank">
+                    Ver projeto completo no GitHub
+                </a>
+                </div>
+            </div>
+        </div>
+  </div>
+</section>
+
+
+
+<footer class="text-center py-4 bg-white" style="color:#961a1a">
+    © 2025 — Catarina Bastos. Todos os direitos reservados.
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+
+
+</body>
 </html>
