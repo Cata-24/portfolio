@@ -26,14 +26,17 @@
 }
 @keyframes letter-move-up{
     to {
-        transform: translateY(-30px);
+        transform: translateY(-3vh);
         opacity: 1;
       }
 }
 
-@keyframes scroll{
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
     to {
-        transform: translateX(calc(-100%) );
+        transform: translateX(-100%);
     }
 }
 
@@ -54,7 +57,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px 0px 20px;
+    padding: 0.8vh 2vh 0 2vh;
     position: fixed;
     top: 0;
     right: 0;
@@ -63,7 +66,7 @@ header {
     z-index: 1000;
     box-sizing: border-box;
     color: white;
-    border-bottom: 0.2px solid #ffffff;
+    border-bottom: 0.1vh solid #ffffff;
 }
 
 main {
@@ -213,29 +216,23 @@ header > div:first-child {
 .horizontal {
     display: flex;
     overflow: hidden;
-    margin: 0;
-    top: -20px;
-    padding-block: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .horizontal ul {
-    font-size: 1.8vw;
     list-style: none;
-    flex-shrink: 0;
-    min-width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 1vw;
-    animation-name: scroll;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    gap: 2rem; /* better for scaling */
+    flex-shrink: 0;
+    min-width: max-content; /* prevents shrinking */
+    animation: scroll 20s linear infinite;
 }
 
 .lead {
     color: white;
-    gap: 20px;
+    gap: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -253,6 +250,10 @@ li a{
 
 .third {
     animation-duration: 20s;
+}
+
+.clone {
+    animation-duration: -20s;
 }
 
 .first {
@@ -345,19 +346,7 @@ li a{
     font-size: 1.5vw;
 }
 
-h5 {
-    color: white;
-    text-shadow: 0.1vw 0.1vh 0.2vw rgb(0, 0, 0), -1px -1px 2px rgb(0, 0, 0);
-    padding: 3%;
-    font-size: 1.5vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
+
 
 .bi:hover h5 {
     opacity: 1; 
@@ -393,7 +382,7 @@ html {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 2.3vh;
   z-index: 10;
   color: white;
   transition: scale 0.4s ease;
@@ -403,7 +392,7 @@ html {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 2.3vh;
   z-index: 10;
   color: white;
   transition: scale 0.4s ease;
@@ -416,7 +405,7 @@ html {
 
 .l {
     display: flex;
-    gap: 5px;
+    gap: 0.3vw;
     justify-content: space-between;
     z-index: 10;
 }
@@ -471,17 +460,17 @@ html {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 3vh;
     color: white;
     z-index: 10;
     position: absolute;
-    top: -40px;
+    top: -5vh;
     font-family: projects;
 }
 
 h6 {
     font-family: projects;
-    font-size: 3rem;
+    font-size: 6vh;
     color:#640909;
 }
 
@@ -495,38 +484,24 @@ h6 {
 }
 
 .scroll-img-container {
-    height: 23rem;
-    width: 23rem;
+    height: 25rem;
+    width: 25rem;
     overflow: hidden;
     border-radius: 50%;
     border: solid white 1px;
-    box-shadow: 0 0 30px 10px #640909;
+    box-shadow: 0 0 3vh 0.7vh #640909;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .scroll-img-container img {
-    width: 23rem;
-    transform: translateY(0);
-    transition: transform 0.1s linear;
+    width: 100%;           /* fill horizontally */
+    height: 140%;          /* fill vertically */   /* cover the container while keeping aspect ratio */
+    object-position:center; /* top aligned, horizontally centered */
     border-radius: 0.375rem;
+    transition: transform 0.1s linear;
 }
-
-
-        /* Ajustes do header */
-        .navbar-brand h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .section {
-            padding: 10px 0;
-        }
-
-        .project-card img {
-            height: 180px;
-            object-fit: cover;
-        }
-
-
 
 .horizontal-section {
   height: 350vh;
@@ -553,22 +528,24 @@ h6 {
 }
 
 .card {
+    display: flex;
+    justify-content: flex-start;
     margin: 4vh;
     border-radius: 8px;
     border: none;
-    height: 44.5vh;
-    padding: 15px;
+    height: 44vh;
+    padding: 1.5vh;
     background-color: rgba(62, 61, 61, 0.5);
     border:solid 0.3px #989898;
 }
 
 .card:hover {
     scale: 1.02;
-    box-shadow: 0 0 20px 4px #640909;
+    box-shadow: 0 0 3vh 0.5vh #640909;
 }
 
 .card-img-top {
-    width: 99.85%;
+    width: 38vh;
     height: 33.5vh;
     border-radius: 0;
     object-fit: fill;
@@ -577,12 +554,12 @@ h6 {
 
 .card-text {
     text-align:justify;
-    font-size: 1.65vh;
+    font-size: 1.6vh;
     position: absolute;
     padding: 2vh;
     height: 33.5vh;
-    margin: 0 15px;
     opacity: 0;
+    margin: 0 1.5vh;
     font-weight: 500;
     color: black;
     transition: opacity 0.4s ease, background-color 0.4s ease;
@@ -595,16 +572,17 @@ h6 {
 }
 
 .card-body {
-    justify-content: center;
+    margin-top: 0;
 }
 
 .btn {
     font-size:1.7vh;
     box-shadow: 0px 4px 4px rgba(0,0,0,0.35);
-    padding: 8px;
+    padding: 1vh;
     background-color: #640909;
     color: white;
     transition: scale 0.4s ease, background-color 0.4s ease;
+    border-radius: 1vh;
     border: none;
 }
 
@@ -620,5 +598,11 @@ h6 {
     top: 15vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 4rem;
+    font-size: 7vh;
+}
+
+@media (max-width: 600px) {
+    .horizontal li {
+        font-size: 0.9rem;
+    }
 }
