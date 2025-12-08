@@ -535,7 +535,7 @@ h6 {
   gap: 5vh;
   will-change: transform;
   align-items: center;
-  padding-top: 20vh;
+  padding-top: 10vh;
   margin: min(5vw, 7vh);
 }
 
