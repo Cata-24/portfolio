@@ -11,20 +11,68 @@ document.addEventListener("scroll", () => {
     }
 });
 
-document.addEventListener("scroll", () => {
-    const section = document.querySelector(".horizontal-section");
-    const track = document.querySelector(".horizontal-track");
+(() => {
+  const section = document.querySelector(".horizontal-section");
+  const wrapper = document.querySelector(".sticky-wrapper");
+  const track = document.querySelector(".horizontal-track");
 
-    const marginFix = parseFloat(getComputedStyle(section).marginTop);
-    const start = section.offsetTop - marginFix;
-    const end = start + section.offsetHeight - window.innerHeight;
+  if (!section || !wrapper || !track) return;
 
-    const progress = Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1);
+  let maxTranslate = 0;
+  let sectionTop = 0;
 
-    const maxTranslate = track.scrollWidth - window.innerWidth;
+function recalc() {
+  sectionTop = section.offsetTop;
+  maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth);
 
-    track.style.transform = `translateX(-${progress * maxTranslate}px)`;
-});
+  const extraVerticalScroll = -8; // in vh
+  const totalHeightVh = 100 + pxToVh(maxTranslate) + extraVerticalScroll;
+
+  section.style.height = totalHeightVh + "vh";
+}
+
+// helper functions
+function pxToVh(px) {
+  return (px / window.innerHeight) * 100;
+}
+
+function pxToVw(px) {
+  return (px / window.innerWidth) * 100;
+}
+
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    const start = sectionTop;
+    const end = sectionTop + maxTranslate;
+
+    if (scrollY >= start && scrollY <= end) {
+      // Scroll horizontal ativo
+      wrapper.style.position = "fixed";
+      wrapper.style.top = "0";
+      wrapper.style.left = "0";
+      wrapper.style.width = "100%";
+
+      const progress = (scrollY - start) / maxTranslate;
+      track.style.transform = `translateX(-${progress * maxTranslate}px)`;
+    } else if (scrollY < start) {
+      // Antes da seção
+      wrapper.style.position = "relative";
+      track.style.transform = "translateX(0)";
+    } else {
+      // Depois da seção: scroll vertical normal
+      wrapper.style.position = "relative";
+      wrapper.style.top = "";
+      track.style.transform = `translateX(-${maxTranslate}px)`;
+    }
+  }
+
+  window.addEventListener("load", recalc);
+  window.addEventListener("resize", recalc);
+  document.addEventListener("scroll", onScroll, { passive: true });
+})();
+
+
 
 document.querySelector("#linkabout").addEventListener("click", () => {
   const targetElement = document.querySelector("#about"); 

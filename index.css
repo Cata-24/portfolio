@@ -408,6 +408,10 @@ html {
     gap: 0.3vw;
     justify-content: space-between;
     z-index: 10;
+    position: absolute;
+    top: 28.5vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .fade {
@@ -460,7 +464,7 @@ html {
 }
 
 h2 {
-    font-size: 3vh;
+    font-size: 2.5vh;
     color: white;
     z-index: 10;
     position: absolute;
@@ -484,7 +488,7 @@ h6 {
 }
 
 .scroll-img-container {
-    height: 25rem;
+    aspect-ratio: 1 / 1;
     width: 25rem;
     overflow: hidden;
     border-radius: 50%;
@@ -493,6 +497,12 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    transition: scale 0.4s ease;
+}
+
+.scroll-img-container:hover {
+    transform: scale(1.03);
+    cursor: pointer;
 }
 
 .scroll-img-container img {
@@ -504,14 +514,14 @@ h6 {
 }
 
 .horizontal-section {
-  height: 350vh;
+  height: 100vh;
   position: relative;
 }
 
 .sticky-wrapper {
   position: sticky;
   top: 0;
-  height: 82vh; /* stays fixed to viewport */
+  height: 100vh; /* stays fixed to viewport */
   overflow: hidden;
 }
 
@@ -520,23 +530,26 @@ h6 {
   width: max-content;
   position: absolute;
   top: 0;
+  height: 100%;
   left: 0;
+  gap: 5vh;
   will-change: transform;
-  padding-top: 30vh;
-  margin: 1vh;
-  margin-right: 2vh;
+  align-items: center;
+  padding-top: 20vh;
+  margin: min(5vw, 7vh);
 }
 
 .card {
     display: flex;
     justify-content: flex-start;
-    margin: 4vh;
-    border-radius: 8px;
+    border-radius: 1vh;
     border: none;
-    height: 44vh;
+    height: 35vh;
+    width: min(90vw, 45vh);
     padding: 1.5vh;
     background-color: rgba(62, 61, 61, 0.5);
     border:solid 0.3px #989898;
+    transition: scale 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
@@ -545,8 +558,8 @@ h6 {
 }
 
 .card-img-top {
-    width: 38vh;
-    height: 33.5vh;
+    width: 30vh;
+    height: 25vh;
     border-radius: 0;
     object-fit: fill;
 }
@@ -554,10 +567,10 @@ h6 {
 
 .card-text {
     text-align:justify;
-    font-size: 1.6vh;
+    font-size: 1.2vh;
     position: absolute;
     padding: 2vh;
-    height: 33.5vh;
+    height: 25vh;
     opacity: 0;
     margin: 0 1.5vh;
     font-weight: 500;
@@ -583,6 +596,7 @@ h6 {
     color: white;
     transition: scale 0.4s ease, background-color 0.4s ease;
     border-radius: 1vh;
+    width: 30vh;
     border: none;
 }
 
@@ -595,14 +609,36 @@ h6 {
 
 .proj {
     position: absolute;
-    top: 15vh;
+    top: 20vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 7vh;
+    font-size: 9vh;
 }
 
 @media (max-width: 600px) {
     .horizontal li {
         font-size: 0.9rem;
     }
+}
+
+/* criar media e fazer com q overflow-x so seja hidden em tamanhos pequenos, e retirar horizontal overflow em tamanhos pequenos */
+
+@media (max-width: 1100px) {
+    html, body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+}
+
+.horizontal-track { display:flex; width: max-content; position: absolute; left:0; top:0; will-change: transform; }
+.horizontal-track > * { flex: 0 0 auto; } /* cards/flex items */
+.sticky-wrapper { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.horizontal-section { position: relative; }
+
+footer {
+    height: 6vh;
+    font-size: 1.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
