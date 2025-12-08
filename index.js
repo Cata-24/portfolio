@@ -148,6 +148,19 @@ sliders.forEach(container => {
     });
 });
 
+const footer = document.querySelector("footer");
+
+function blockScrollBeyondFooter() {
+  const scrollY = window.scrollY || window.pageYOffset;
+  const footerTop = footer.offsetTop;
+
+  if (scrollY > footerTop) {
+    window.scrollTo({ top: footerTop, behavior: "auto" });
+  }
+}
+
+window.addEventListener("scroll", blockScrollBeyondFooter, { passive: false });
+
 
 
 
